@@ -9,33 +9,25 @@ redirect_from:
 
 {% include base_path %}
 
+Please see my full [CV](https://rikdz.github.io/files/cv.pdf) for more details.
+
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* A.A., Miami-Dade College, 2008
+* B.S./B.A., The Evergreen State College, 2011
+* M.S. in Lingusitics, University of Washington 2016
+* Ph.D in Computational Linguistics, University of Washington 2019
 
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* 2013-2019: Research Assistant
+  * University of Washington
+  * Supervisor: Professor Hannaneh Hajishirzi
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* 2019-Present: Post-Doctoral Researcher
+  * University of Washington
+  * Supervisor: Professor Noah Smith
   
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
-
 Publications
 ======
   <ul>{% for post in site.publications %}
