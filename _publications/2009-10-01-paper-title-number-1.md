@@ -1,15 +1,22 @@
 ---
-title: "Paper Title Number 1"
+title: "Formal Pragmatics of `Even-If'"
 collection: publications
 permalink: /publication/2009-10-01-paper-title-number-1
-excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
-date: 2009-10-01
-venue: 'Journal 1'
-paperurl: 'http://academicpages.github.io/files/paper1.pdf'
+excerpt: 'EVEN-IFS do not assert this connection; quite the opposite, the purpose of an EVEN-IF is to assert the absence of a non-accidental connection between the an- tecedent or its negation and the consequent'
+date: 2013
+venue: 'University of Washington Working Papers in Linguistics, Vol. 31'
+paperurl: 'http://rikdz.github.io/files/paper1.pdf'
 citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
 ---
-This paper is about the number 1. The number 2 is left for future work.
+EVEN-IF counterfactuals are discussed with the goal of advocating for a compositional rather than lexical analysis of the phrase. Previous approaches to even are reviewed: one positing multiple homophonous morphemes and another unified approach. Their mean is integrated into the analysis provided in this paper. Finally, a consistent theory of EVEN-IF counterfactuals is provided, replete with specifics on how the presuppositions of even are built from the information of the conditional.
 
-[Download paper here](http://academicpages.github.io/files/paper1.pdf)
+[PDF](http://rikdz.github.io/files/2013-evenif.pdf)
 
-Recommended citation: Your Name, You. (2009). "Paper Title Number 1." <i>Journal 1</i>. 1(1).
+Bibtex:
+@article{kedziorski2013formal,
+  title={Formal Pragmatics of Even if⋆},
+  author={Koncel-Kedziorski, Rik},
+  journal={University of Washington Working Papers in Linguistics},
+  volume={31},
+  year={2013}
+}
