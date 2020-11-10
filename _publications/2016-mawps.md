@@ -16,6 +16,7 @@ Recent work across several AI subdisciplines has focused on automatically solvin
 [PDF](http://rikdz.github.io/files/2016-mawps.pdf)
 
 Bibtex:
+{% raw %}
 ```
 @inproceedings{koncel:naacl16,
   title={{MAWPS}: {A} {M}ath {W}ord {P}roblem {R}epository},
@@ -24,3 +25,4 @@ Bibtex:
   year={2016}
 }
 ```
+{% endraw %}
