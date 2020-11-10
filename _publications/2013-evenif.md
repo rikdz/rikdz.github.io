@@ -3,7 +3,7 @@ title: "Formal Pragmatics of `Even-If'"
 collection: publications
 permalink: /publication/2009-10-01-paper-title-number-1
 excerpt: 'EVEN-IFS do not assert this connection; quite the opposite, the purpose of an EVEN-IF is to assert the absence of a non-accidental connection between the an- tecedent or its negation and the consequent'
-date: 2013
+date: 2013-10-1
 venue: 'University of Washington Working Papers in Linguistics, Vol. 31'
 paperurl: 'http://rikdz.github.io/files/paper1.pdf'
 citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
