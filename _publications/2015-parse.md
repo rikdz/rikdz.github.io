@@ -2,7 +2,10 @@
 title: "Parsing Algebraic Word Problems into Equations"
 collection: publications
 permalink: /publication/2015-parsing
-excerpt: '"Our method makes use of a factorized objective function which allows us to model the complex interplay of resolutions. Our language model takes advantage of the discourse structure of the commentaries, making it robust enough to handle the unique language of the soccer domain."'
+excerpt: '"ALGES learns to map spans
+of text to arithmetic operators, to combine them
+given the global context of the problem, and to
+choose the “best” tree corresponding to the problem."'
 date: 2015-12-1
 venue: 'TACL 2015, Volume 3'
 paperurl: 'http://rikdz.github.io/files/2015-parsing.pdf'
