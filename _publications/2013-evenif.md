@@ -1,5 +1,6 @@
 ---
 title: "Formal Pragmatics of `Even-If'"
+authors: "Rik Koncel-Kedziorski"
 collection: publications
 permalink: /publication/2009-10-01-paper-title-number-1
 excerpt: '"[T]he purpose of an EVEN-IF is to assert the absence of a non-accidental connection between the antecedent or its negation and the consequent"'
