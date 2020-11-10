@@ -1,5 +1,6 @@
 ---
 title: "Multi-resolution Language Grounding with Weak Supervision"
+authors: "Rik Koncel-Kedziorski, Hannaneh Hajishirzi, Ali Farhadi"
 collection: publications
 permalink: /publication/2014-multires
 excerpt: '"Our method makes use of a factorized objective function which allows us to model the complex interplay of resolutions. Our language model takes advantage of the discourse structure of the commentaries, making it robust enough to handle the unique language of the soccer domain."'

@@ -1,5 +1,6 @@
 ---
 title: "Parsing Algebraic Word Problems into Equations"
+authors: "Rik Koncel-Kedziorski, Hannaneh Hajishirzi, Ashish Sabharwal, Oren Etzioni, Sienna Dumas Ang"
 collection: publications
 permalink: /publication/2015-parsing
 excerpt: '"ALGES learns to map spans

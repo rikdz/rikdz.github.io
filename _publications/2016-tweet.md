@@ -1,26 +1,25 @@
 ---
-title: "Formal Pragmatics of `Even-If'"
+title: "We Who Tweet: Pronominal Relative Clauses on Twitter"
+authors: "Kirby Conrod, Rachael Tatman, Rik Koncel-Kedziorski"
 collection: publications
 permalink: /publication/2009-10-01-paper-title-number-1
-excerpt: '"[T]he purpose of an EVEN-IF is to assert the absence of a non-accidental connection between the antecedent or its negation and the consequent"'
-date: 2013-10-1
-venue: 'University of Washington Working Papers in Linguistics, Vol. 31'
+date: 2016-10-1
+venue: 'CLiF 2016'
 paperurl: 'http://rikdz.github.io/files/2013-evenif.pdf'
 ---
 
 Abstract:
 
-EVEN-IF counterfactuals are discussed with the goal of advocating for a compositional rather than lexical analysis of the phrase. Previous approaches to even are reviewed: one positing multiple homophonous morphemes and another unified approach. Their mean is integrated into the analysis provided in this paper. Finally, a consistent theory of EVEN-IF counterfactuals is provided, replete with specifics on how the presuppositions of even are built from the information of the conditional.
+Pronominal relative clauses were previously reported to be unproductive in English, appearing only in Bible verses and proverbs. This corpus study of Twitter data shows that pronominal relative clauses are a productive part of contemporary English, and can be used in both literary and nonliterary registers.
 
-[PDF](http://rikdz.github.io/files/2013-evenif.pdf)
+[PDF](http://rikdz.github.io/files/2016-tweet.pdf)
 
 Bibtex:
 ```
-@article{kedziorski2013formal,
-  title={Formal Pragmatics of Even if⋆},
-  author={Koncel-Kedziorski, Rik},
-  journal={University of Washington Working Papers in Linguistics},
-  volume={31},
-  year={2013}
+@inproceedings{conrod2016we,
+  title={We Who Tweet: Pronominal Relative Clauses on Twitter.},
+  author={Conrod, Kirby and Tatman, Rachael and Koncel-Kedziorski, Rik},
+  booktitle={CLiF},
+  year={2016}
 }
 ```
