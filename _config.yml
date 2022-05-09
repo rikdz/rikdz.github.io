@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Rik Koncel-Kedziorski"
 title_separator          : "-"
 name                     : &name "Rik Koncel-Kedziorski"
-description              : &description "Post-Doctoral Researcher at University of Washington"
+description              : &description "NLP Researcher"
 url                      : https://rikdz.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "rikdz.github.io"
@@ -82,11 +82,11 @@ analytics:
 author:
   name             : "Rik Koncel-Kedziorski"
   avatar           : "profile.png"
-  bio              : "Post-Doctoral Researcher at University of Washington. Jack of all trades, master of some."
+  bio              : "NLP Research. Generation and Understanding."
   location         : "Puget Sound"
-  employer         : "University of Washington"
+  employer         : "Amazon Alexa"
   pubmed           : 
-  googlescholar    : "https://scholar.google.com/citations?user=hpdPMnoAAAAJ"
+  googlescholar    : "https://scholar.google.com/citations?user=7oJZmG0AAAAJ"
   email            :
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
