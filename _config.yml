@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Rik Koncel-Kedziorski"
 title_separator          : "-"
 name                     : &name "Rik Koncel-Kedziorski"
-description              : &description "NLP Researcher"
+description              : &description "AI Researcher"
 url                      : https://rikdz.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "rikdz.github.io"
@@ -82,9 +82,9 @@ analytics:
 author:
   name             : "Rik Koncel-Kedziorski"
   avatar           : "profile.png"
-  bio              : "NLP Research. Generation and Understanding."
+  bio              : "AI Research, Reasoning and Human-AI Collaboration."
   location         : "Puget Sound"
-  employer         : "Amazon Alexa"
+  employer         : "Kensho / S&P Global"
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=7oJZmG0AAAAJ"
   email            :

@@ -8,6 +8,5 @@ redirect_from:
   - /about.html
 ---
 
-I investigate general methods for representing meaning in natural language processing systems by addressing practical problems facing educators and researchers. The main theoretical focus of my work is grounding longer texts (paragraphs and documents) in representations of their pragmatic or intended meaning (as opposed to semantic or standing meaning). The applications of this work range from dialog systems to automatic tutoring and research assistants.
-
-When I'm not doing that, I'm most likely on a boat somewhere. 
+My research focuses on new methods for reasoning from data, automatic question answering, human-computer collaboration, and improving evaluation of AI systems. 
+Previously, I worked on those same things plus language grounding and pragmatic meaning representation. 
