@@ -8,5 +8,5 @@ redirect_from:
   - /about.html
 ---
 
-My research focuses on new methods for reasoning from data, automatic question answering, human-computer collaboration, and improving evaluation of AI systems. 
-Previously, I worked on those same things plus language grounding and pragmatic meaning representation. 
+My research focuses on new methods for reasoning from data, human-computer collaboration, and improving evaluation of AI systems. 
+Previously, I worked on those same things plus question answering, language grounding, and pragmatic meaning representation. 
