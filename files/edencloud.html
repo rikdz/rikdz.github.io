@@ -84,7 +84,8 @@
         const database = app.database();
 
         async function loadWordCloud() {
-            try {
+            /*
+            try { */
                 // Reference to the text submissions in Realtime Database
                 const textSubmissionsRef = database.ref('text_submissions');
                 
@@ -155,7 +156,7 @@
                     drawOutOfBound: false,
                     minSize: 4
                 });
-                
+            /*    
             } catch (error) {
                 console.error('Error loading word cloud:', error);
                 document.getElementById('loading').style.display = 'none';
@@ -163,6 +164,7 @@
                 errorDiv.textContent = `Error: ${error.message}`;
                 errorDiv.style.display = 'block';
             }
+            */
         }
 
         // Load word cloud when page loads
