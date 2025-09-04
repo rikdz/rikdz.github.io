@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Cloud</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wordcloud2.js/1.2.2/wordcloud2.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+        }
+        
+        #wordcloud-container {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+        
+        #wordcloud {
+            border-radius: 10px;
+            background: #fafafa;
+            display: block;
+        }
+        
+        .loading {
+            text-align: center;
+            color: #667eea;
+            font-size: 24px;
+            padding: 40px;
+        }
+        
+        .error {
+            text-align: center;
+            color: #c33;
+            font-size: 18px;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wordcloud-container">
+        <div id="loading" class="loading">🔄 Loading word cloud...</div>
+        <canvas id="wordcloud" width="900" height="500" style="display:none;"></canvas>
+        <div id="error" class="error" style="display:none;"></div>
+    </div>
+
+    <script>
+        // Firebase configuration (dummy values - replace with your actual config)
+        const firebaseConfig = {
+            apiKey: "your-api-key-here",
+            authDomain: "your-project.firebaseapp.com",
+            projectId: "your-project-id",
+            storageBucket: "your-project.appspot.com",
+            messagingSenderId: "123456789",
+            appId: "1:123456789:web:abcdef123456"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        async function loadWordCloud() {
+            try {
+                // Collection name where text data is stored
+                const collectionName = 'text_submissions';
+                
+                // Get all documents from the collection
+                const querySnapshot = await db.collection(collectionName).get();
+                
+                if (querySnapshot.empty) {
+                    throw new Error('No data found in Firebase collection');
+                }
+                
+                // Extract text from all documents
+                let allText = '';
+                querySnapshot.forEach((doc) => {
+                    const data = doc.data();
+                    // Assuming the text field is called 'text' - adjust as needed
+                    if (data.text) {
+                        allText += ' ' + data.text;
+                    }
+                });
+                
+                if (!allText.trim()) {
+                    throw new Error('No text content found');
+                }
+                
+                // Process text into word frequency
+                const wordFreq = {};
+                const words = allText
+                    .toLowerCase()
+                    .replace(/[^\w\s]/g, ' ')
+                    .split(/\s+/)
+                    .filter(word => word.length > 2);
+                
+                words.forEach(word => {
+                    wordFreq[word] = (wordFreq[word] || 0) + 1;
+                });
+                
+                // Convert to WordCloud2 format
+                const wordList = Object.entries(wordFreq)
+                    .sort(([,a], [,b]) => b - a)
+                    .slice(0, 100)
+                    .map(([word, freq]) => [word, freq]);
+                
+                if (wordList.length === 0) {
+                    throw new Error('No valid words found');
+                }
+                
+                // Hide loading message
+                document.getElementById('loading').style.display = 'none';
+                
+                // Show and generate word cloud
+                const canvas = document.getElementById('wordcloud');
+                canvas.style.display = 'block';
+                
+                WordCloud(canvas, {
+                    list: wordList,
+                    gridSize: Math.round(16 * canvas.width / 1024),
+                    weightFactor: function(size) {
+                        return Math.pow(size, 2.3) * canvas.width / 1024;
+                    },
+                    fontFamily: 'Times, serif',
+                    color: function() {
+                        const colors = ['#667eea', '#764ba2', '#f093fb', '#f5576c', '#4facfe', '#00f2fe', '#ff9a9e', '#fad0c4'];
+                        return colors[Math.floor(Math.random() * colors.length)];
+                    },
+                    backgroundColor: '#fafafa',
+                    rotateRatio: 0.3,
+                    rotationSteps: 2,
+                    drawOutOfBound: false,
+                    minSize: 4
+                });
+                
+            } catch (error) {
+                console.error('Error loading word cloud:', error);
+                document.getElementById('loading').style.display = 'none';
+                const errorDiv = document.getElementById('error');
+                errorDiv.textContent = `Error: ${error.message}`;
+                errorDiv.style.display = 'block';
+            }
+        }
+
+        // Load word cloud when page loads
+        window.addEventListener('load', loadWordCloud);
+    </script>
+</body>
+</html>
