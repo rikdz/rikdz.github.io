@@ -80,27 +80,28 @@
     const analytics = getAnalytics(app);
     </script>
     <script>
-        const db = app.firestore();
+
+        const database = app.database();
 
         async function loadWordCloud() {
             try {
-                // Collection name where text data is stored
-                const collectionName = 'text_submissions';
+                // Reference to the text submissions in Realtime Database
+                const textSubmissionsRef = database.ref('text_submissions');
                 
-                // Get all documents from the collection
-                const querySnapshot = await db.collection(collectionName).get();
+                // Get all text submissions
+                const snapshot = await textSubmissionsRef.once('value');
+                const data = snapshot.val();
                 
-                if (querySnapshot.empty) {
-                    throw new Error('No data found in Firebase collection');
+                if (!data) {
+                    throw new Error('No data found in Firebase Realtime Database');
                 }
                 
-                // Extract text from all documents
+                // Extract text from all submissions
                 let allText = '';
-                querySnapshot.forEach((doc) => {
-                    const data = doc.data();
+                Object.values(data).forEach((submission) => {
                     // Assuming the text field is called 'text' - adjust as needed
-                    if (data.text) {
-                        allText += ' ' + data.text;
+                    if (submission.text) {
+                        allText += ' ' + submission.text;
                     }
                 });
                 
