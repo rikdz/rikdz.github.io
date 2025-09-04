@@ -86,6 +86,9 @@
         async function loadWordCloud() {
             /*
             try { */
+                // Hide loading message
+                document.getElementById('loading').style.display = 'none';
+                
                 // Reference to the text submissions in Realtime Database
                 const textSubmissionsRef = database.ref('text_submissions');
                 
@@ -132,8 +135,6 @@
                     throw new Error('No valid words found');
                 }
                 
-                // Hide loading message
-                document.getElementById('loading').style.display = 'none';
                 
                 // Show and generate word cloud
                 const canvas = document.getElementById('wordcloud');
@@ -170,6 +171,5 @@
         // Load word cloud when page loads
         window.addEventListener('load', loadWordCloud);
     </script>
-    BLAGHAG
 </body>
 </html>
