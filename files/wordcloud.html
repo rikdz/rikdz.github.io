@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Word Cloud</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wordcloud2.js/1.2.2/wordcloud2.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
     <style>
         body {
             margin: 0;
@@ -19,7 +17,7 @@
             font-family: Arial, sans-serif;
         }
         
-        #wordcloud-container {
+	#wordcloud-container {
             background: white;
             border-radius: 15px;
             padding: 20px;
@@ -27,7 +25,7 @@
             max-width: 90vw;
             max-height: 90vh;
         }
-        
+
         #wordcloud {
             border-radius: 10px;
             background: #fafafa;
@@ -55,10 +53,12 @@
         <canvas id="wordcloud" width="900" height="500" style="display:none;"></canvas>
         <div id="error" class="error" style="display:none;"></div>
     </div>
-    <script>
+    <script type="module">
       // Import the functions you need from the SDKs you need
-     import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-analytics.js";
+      import { getDatabase, ref, get} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-database.js";
+
       // TODO: Add SDKs for Firebase products that you want to use
       // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -76,7 +76,6 @@
         };
 
         // Initialize Firebase
-        const analytics = getAnalytics(app);
 
         const app = initializeApp(firebaseConfig);
         const database = getDatabase(app);
@@ -88,11 +87,12 @@
                 document.getElementById('loading').style.display = 'none';
                 
                 // Reference to the text submissions in Realtime Database
-                const textSubmissionsRef = database.ref('text_submissions');
+                const textSubmissionsRef = ref(database, 'text_submissions');
                 
                 // Get all text submissions
-                const snapshot = await textSubmissionsRef.once('value');
+                const snapshot = await get(textSubmissionsRef);
                 const data = snapshot.val();
+		console.log(data)
                 
                 if (!data) {
                     throw new Error('No data found in Firebase Realtime Database');
@@ -110,14 +110,25 @@
                 if (!allText.trim()) {
                     throw new Error('No text content found');
                 }
-                
+                                // Define stop words to filter out
+                const stopwordsRef= ref(database, 'stopwords');
+		const stopsnapshot = await get(stopwordsRef);
+                const stopWords = new Set(stopsnapshot.val());
+                const badwordsRef= ref(database, 'badwords');
+		const badsnapshot = await get(badwordsRef);
+                const badWords = new Set(badsnapshot.val());
                 // Process text into word frequency
                 const wordFreq = {};
-                const words = allText
+		const words = allText
                     .toLowerCase()
-                    .replace(/[^\w\s]/g, ' ')
+                    .replace(/[^\w\s]/g, ' ') // Replace punctuation with spaces
                     .split(/\s+/)
-                    .filter(word => word.length > 2);
+                    .filter(word =>
+                        word.length > 3 && // Only words longer than 3 chars
+                        !stopWords.has(word) && // Filter out stop words
+                        !badWords.has(word) && // Filter out bad words
+                        !/^\d+$/.test(word) // Filter out numbers
+                    );
                 
                 words.forEach(word => {
                     wordFreq[word] = (wordFreq[word] || 0) + 1;
@@ -138,22 +149,55 @@
                 const canvas = document.getElementById('wordcloud');
                 canvas.style.display = 'block';
                 
-                WordCloud(canvas, {
+
+		WordCloud(canvas, {
                     list: wordList,
-                    gridSize: Math.round(16 * canvas.width / 1024),
+                    gridSize: 4,
                     weightFactor: function(size) {
-                        return Math.pow(size, 2.3) * canvas.width / 1024;
+                        return Math.pow(size, 0.8) * 18;
                     },
-                    fontFamily: 'Times, serif',
-                    color: function() {
-                        const colors = ['#667eea', '#764ba2', '#f093fb', '#f5576c', '#4facfe', '#00f2fe', '#ff9a9e', '#fad0c4'];
-                        return colors[Math.floor(Math.random() * colors.length)];
+                    fontFamily: 'Impact, Arial Black, sans-serif',
+                    color: function(word, weight, fontSize, distance, theta) {
+                        // Create dynamic colors based on word frequency and position
+                        const colors = [
+                            '#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4',
+                            '#feca57', '#ff9ff3', '#74b9ff', '#6c5ce7',
+                            '#a29bfe', '#fd79a8', '#fdcb6e', '#e17055',
+                            '#00b894', '#0984e3', '#b2bec3', '#dda0dd'
+                        ];
+
+                        // Use a combination of frequency and randomness for color selection
+                        const frequencyIndex = Math.floor((weight / Math.max(...wordList.map(w => w[1]))) * colors.length * 0.7);
+                        const randomIndex = Math.floor(Math.random() * colors.length * 0.3);
+                        const colorIndex = (frequencyIndex + randomIndex) % colors.length;
+
+                        return colors[colorIndex];
                     },
-                    backgroundColor: '#fafafa',
-                    rotateRatio: 0.3,
-                    rotationSteps: 2,
+                    backgroundColor: 'transparent',
+                    rotateRatio: 0.7,
+                    rotationSteps: 8,
                     drawOutOfBound: false,
-                    minSize: 4
+                    shrinkToFit: true,
+                    minSize: 10,
+                    maxRotation: Math.PI*0.3,
+                    minRotation: -Math.PI*0.3,
+                    shape: 'circle',
+                    ellipticity: 0.8,
+                    hover: function(item, dimension, event) {
+                        // Add hover effects
+                        if (item) {
+                            canvas.style.cursor = 'pointer';
+                        } else {
+                            canvas.style.cursor = 'default';
+                        }
+                    },
+		    click: function(item, dimension, event) {
+                        // Add click animation effect
+                        if (item) {
+                            console.log('Clicked word:', item[0], 'frequency:', item[1]);
+                            // Could add word highlighting or info display here
+                        }
+                    }
                 });
             /*    
             } catch (error) {
@@ -171,3 +215,4 @@
     </script>
 </body>
 </html>
+

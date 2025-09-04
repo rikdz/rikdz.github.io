@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Your Feedback</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: backgroundShift 10s ease-in-out infinite alternate;
+        }
+
+        @keyframes backgroundShift {
+            0% { background: radial-gradient(circle at 30% 70%, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
+            100% { background: radial-gradient(circle at 70% 30%, #0f3460 0%, #16213e 50%, #1a1a2e 100%); }
+        }
+
+        .form-container {
+            background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 
+                0 20px 40px rgba(0,0,0,0.3),
+                inset 0 1px 0 rgba(255,255,255,0.2),
+                0 0 50px rgba(15,52,96,0.3);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .form-container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3);
+            border-radius: 25px;
+            z-index: -1;
+            animation: borderGlow 3s linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes borderGlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1 {
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.2em;
+            font-weight: 300;
+            text-shadow: 0 0 20px rgba(255,255,255,0.5);
+        }
+
+        .subtitle {
+            color: #4ecdc4;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            opacity: 0.9;
+            text-shadow: 0 0 10px rgba(78, 205, 196, 0.5);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            color: #ffffff;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255,255,255,0.3);
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 15px 20px;
+            font-size: 16px;
+            font-family: inherit;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 15px;
+            background: rgba(255,255,255,0.1);
+            color: #ffffff;
+            backdrop-filter: blur(5px);
+            resize: vertical;
+            transition: all 0.3s ease;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #4ecdc4;
+            box-shadow: 
+                inset 0 2px 10px rgba(0,0,0,0.2),
+                0 0 20px rgba(78, 205, 196, 0.3);
+            background: rgba(255,255,255,0.15);
+        }
+
+        textarea::placeholder {
+            color: rgba(255,255,255,0.6);
+            font-style: italic;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #ffffff;
+            background: linear-gradient(45deg, #4ecdc4, #45b7d1);
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 
+                0 5px 15px rgba(78, 205, 196, 0.3),
+                inset 0 1px 0 rgba(255,255,255,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                0 8px 25px rgba(78, 205, 196, 0.4),
+                inset 0 1px 0 rgba(255,255,255,0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .submit-btn:disabled {
+            background: rgba(255,255,255,0.2);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .submit-btn:disabled::before {
+            display: none;
+        }
+
+        .message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 500;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .message.success {
+            background: rgba(76, 175, 80, 0.2);
+            border: 1px solid rgba(76, 175, 80, 0.5);
+            color: #4caf50;
+            text-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+        }
+
+        .message.error {
+            background: rgba(244, 67, 54, 0.2);
+            border: 1px solid rgba(244, 67, 54, 0.5);
+            color: #f44336;
+            text-shadow: 0 0 10px rgba(244, 67, 54, 0.3);
+        }
+
+        .char-counter {
+            text-align: right;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.6);
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .form-container {
+                padding: 25px;
+                margin: 10px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .subtitle {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>✨ Share Your Experience</h1>
+        <p class="subtitle">Your feedback helps us create better experiences for everyone</p>
+        
+        <form id="feedbackForm">
+            <div class="form-group">
+                <label for="feedbackText">Your Feedback:</label>
+                <textarea 
+                    id="feedbackText" 
+                    name="feedbackText" 
+                    placeholder="Tell us about your experience with the exhibit. What did you learn? How did it make you feel? What stood out to you the most?"
+                    maxlength="1000"
+                    required
+                ></textarea>
+                <div class="char-counter">
+                    <span id="charCount">0</span>/1000 characters
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn" id="submitBtn">
+                📝 Submit Feedback
+            </button>
+        </form>
+        
+        <div id="message" class="message"></div>
+    </div>
+
+    <script>
+        // Firebase configuration (dummy values - replace with your actual config)
+        const firebaseConfig = {
+          apiKey: "AIzaSyAk6AToTq7xAi09eKUN2uE4FQnO8-c1gUQ",
+            authDomain: "edenword-2a8b0.firebaseapp.com",
+            databaseURL: "https://edenword-2a8b0-default-rtdb.firebaseio.com",
+            projectId: "edenword-2a8b0",
+            storageBucket: "edenword-2a8b0.firebasestorage.app",
+            messagingSenderId: "139615519633",
+            appId: "1:139615519633:web:15c2170888dbeacba09030",
+            measurementId: "G-4K6M56G0MD"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
+        // Get form elements
+        const form = document.getElementById('feedbackForm');
+        const feedbackText = document.getElementById('feedbackText');
+        const submitBtn = document.getElementById('submitBtn');
+        const messageDiv = document.getElementById('message');
+        const charCount = document.getElementById('charCount');
+
+        // Character counter
+        feedbackText.addEventListener('input', function() {
+            const count = this.value.length;
+            charCount.textContent = count;
+            
+            if (count > 900) {
+                charCount.style.color = '#ff6b6b';
+            } else if (count > 800) {
+                charCount.style.color = '#feca57';
+            } else {
+                charCount.style.color = 'rgba(255,255,255,0.6)';
+            }
+        });
+
+        // Format timestamp as "HH:MM DD MMM"
+        function formatTimestamp(date) {
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
+                          'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            
+            const hours = date.getHours().toString().padStart(2, '0');
+            const minutes = date.getMinutes().toString().padStart(2, '0');
+            const day = date.getDate().toString().padStart(2, '0');
+            const month = months[date.getMonth()];
+            
+            return `${hours}:${minutes} ${day} ${month}`;
+        }
+
+        // Show message function
+        function showMessage(text, type) {
+            messageDiv.textContent = text;
+            messageDiv.className = `message ${type}`;
+            setTimeout(() => {
+                messageDiv.classList.add('show');
+            }, 100);
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                messageDiv.classList.remove('show');
+            }, 5000);
+        }
+
+        // Form submission
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const text = feedbackText.value.trim();
+            
+            if (!text) {
+                showMessage('Please enter your feedback before submitting.', 'error');
+                return;
+            }
+
+            // Disable form during submission
+            submitBtn.disabled = true;
+            submitBtn.textContent = '⏳ Submitting...';
+            feedbackText.disabled = true;
+
+            try {
+                // Create submission object
+                const submission = {
+                    text: text,
+                    timestamp: formatTimestamp(new Date()),
+                    rawTimestamp: Date.now() // Also keep raw timestamp for sorting
+                };
+
+                // Push to Firebase Realtime Database
+                await database.ref('text_submissions').push(submission);
+                
+                // Success
+                showMessage('🎉 Thank you! Your feedback has been submitted successfully.', 'success');
+                
+                // Reset form
+                form.reset();
+                charCount.textContent = '0';
+                charCount.style.color = 'rgba(255,255,255,0.6)';
+                
+            } catch (error) {
+                console.error('Error submitting feedback:', error);
+                showMessage('❌ Sorry, there was an error submitting your feedback. Please try again.', 'error');
+            } finally {
+                // Re-enable form
+                submitBtn.disabled = false;
+                submitBtn.textContent = '📝 Submit Feedback';
+                feedbackText.disabled = false;
+                feedbackText.focus();
+            }
+        });
+
+        // Auto-focus on the textarea when page loads
+        window.addEventListener('load', () => {
+            feedbackText.focus();
+        });
+
+        // Add some visual feedback when typing
+        feedbackText.addEventListener('input', function() {
+            if (this.value.length > 0) {
+                submitBtn.style.background = 'linear-gradient(45deg, #4ecdc4, #45b7d1)';
+            } else {
+                submitBtn.style.background = 'linear-gradient(45deg, #4ecdc4, #45b7d1)';
+            }
+        });
+    </script>
+</body>
+</html>
