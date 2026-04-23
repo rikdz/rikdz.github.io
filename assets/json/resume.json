@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Rik Koncel-Kedziorski",
-    "label": "ML Scientist, Apple",
+    "label": "Postdoctoral Researcher, University of Washington, Paul G. Allen School of Computer Science & Engineering",
     "email": "rikkoncelkedziorski@gmail.com",
     "url": "https://rikdz.github.io",
     "summary": "My research focuses on new methods for reasoning from data, human-computer collaboration, and improving evaluation of AI systems. Previously, I worked on those same things plus question answering, language grounding, and pragmatic meaning representation.",
@@ -20,15 +20,21 @@
   },
   "work": [
     {
+      "name": "University of Washington, Paul G. Allen School of Computer Science & Engineering",
+      "position": "Postdoctoral Researcher",
+      "startDate": "2019",
+      "endDate": "2021",
+      "highlights": [
+        "Research on language understanding and generation for scientific text, human-AI interaction, and dialog systems. PI: Noah A. Smith."
+      ]
+    },
+    {
       "name": "Apple",
       "position": "ML Scientist",
       "startDate": "2024",
       "endDate": "",
       "highlights": [
-        "Developed reinforcement learning algorithms for learning user preferences through multi-turn interactions and behavioral simulation",
-        "Invented novel methods for personalizing generative AI systems",
-        "Drove cross-functional teams to integrate reasoning into multimodal LLM systems",
-        "Led research on synthetic data generation for training user-adaptive models"
+        "Research on personalization, preference learning, and reasoning for multimodal LLM systems; synthetic data generation for user-adaptive models."
       ]
     },
     {
@@ -37,9 +43,7 @@
       "startDate": "2022",
       "endDate": "2024",
       "highlights": [
-        "Secured $100M+ investment for LLM development through technical leadership and strategic vision",
-        "Developed user-centered data and algorithms for financial NLP",
-        "Integral to defining company's Generative AI strategy with focus on financial reasoning"
+        "Research on financial NLP and reasoning; datasets and evaluation methods for LLM-based financial question answering."
       ]
     },
     {
@@ -48,19 +52,7 @@
       "startDate": "2021",
       "endDate": "2022",
       "highlights": [
-        "Created scalable generative QA systems for Alexa",
-        "Developed novel approaches for RAG and multilingual QA"
-      ]
-    },
-    {
-      "name": "University of Washington CSE",
-      "position": "Postdoctoral Researcher",
-      "startDate": "2019",
-      "endDate": "2021",
-      "highlights": [
-        "Conducted foundational research on language understanding and generation for scientific domains",
-        "Supervised 8 student researchers under PI Noah Smith on projects involving human-AI interaction and dialog systems",
-        "Published influential work on LLM evaluation and graph-based reasoning"
+        "Generative question answering for Alexa; retrieval-augmented generation and multilingual QA."
       ]
     }
   ],

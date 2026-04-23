@@ -15,42 +15,37 @@
     institution: Miami-Dade College
     year: '2009'
     description: []
-- title: Experience
+- title: Academic Positions
+  type: time_table
+  contents:
+  - title: Postdoctoral Researcher
+    institution: University of Washington, Paul G. Allen School of Computer Science
+      & Engineering
+    year: 2019–2021
+    description:
+    - 'Research on language understanding and generation for scientific text, human-AI
+      interaction, and dialog systems. PI: Noah A. Smith.'
+- title: Industry Positions
   type: time_table
   contents:
   - title: ML Scientist
     institution: Apple
     year: 2024–present
     description:
-    - Developed reinforcement learning algorithms for learning user preferences through
-      multi-turn interactions and behavioral simulation
-    - Invented novel methods for personalizing generative AI systems
-    - Drove cross-functional teams to integrate reasoning into multimodal LLM systems
-    - Led research on synthetic data generation for training user-adaptive models
+    - Research on personalization, preference learning, and reasoning for multimodal
+      LLM systems; synthetic data generation for user-adaptive models.
   - title: Research Scientist
     institution: S&P Global, Kensho
     year: 2022–2024
     description:
-    - Secured $100M+ investment for LLM development through technical leadership and
-      strategic vision
-    - Developed user-centered data and algorithms for financial NLP
-    - Integral to defining company's Generative AI strategy with focus on financial
-      reasoning
+    - Research on financial NLP and reasoning; datasets and evaluation methods for
+      LLM-based financial question answering.
   - title: Applied Scientist
     institution: Amazon
     year: 2021–2022
     description:
-    - Created scalable generative QA systems for Alexa
-    - Developed novel approaches for RAG and multilingual QA
-  - title: Postdoctoral Researcher
-    institution: University of Washington CSE
-    year: 2019–2021
-    description:
-    - Conducted foundational research on language understanding and generation for
-      scientific domains
-    - Supervised 8 student researchers under PI Noah Smith on projects involving human-AI
-      interaction and dialog systems
-    - Published influential work on LLM evaluation and graph-based reasoning
+    - Generative question answering for Alexa; retrieval-augmented generation and
+      multilingual QA.
 - title: Grants and Awards
   type: time_table
   contents:
