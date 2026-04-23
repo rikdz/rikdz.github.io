@@ -1,0 +1,90 @@
+- title: Education
+  type: time_table
+  contents:
+  - title: PhD, Computational Linguistics
+    institution: University of Washington
+    year: '2019'
+    description:
+    - 'Dissertation: Understanding and Generating Multi-sentence Texts. Advisors:
+      Hanna Hajishirzi & Gina-Anne Levow.'
+  - title: B.S./B.A.
+    institution: The Evergreen State College
+    year: '2012'
+    description: []
+  - title: A.A.
+    institution: Miami-Dade College
+    year: '2009'
+    description: []
+- title: Experience
+  type: time_table
+  contents:
+  - title: ML Scientist
+    institution: Apple
+    year: 2024–present
+    description:
+    - Developed reinforcement learning algorithms for learning user preferences through
+      multi-turn interactions and behavioral simulation
+    - Invented novel methods for personalizing generative AI systems
+    - Drove cross-functional teams to integrate reasoning into multimodal LLM systems
+    - Led research on synthetic data generation for training user-adaptive models
+  - title: Research Scientist
+    institution: S&P Global, Kensho
+    year: 2022–2024
+    description:
+    - Secured $100M+ investment for LLM development through technical leadership and
+      strategic vision
+    - Developed user-centered data and algorithms for financial NLP
+    - Integral to defining company's Generative AI strategy with focus on financial
+      reasoning
+  - title: Applied Scientist
+    institution: Amazon
+    year: 2021–2022
+    description:
+    - Created scalable generative QA systems for Alexa
+    - Developed novel approaches for RAG and multilingual QA
+  - title: Postdoctoral Researcher
+    institution: University of Washington CSE
+    year: 2019–2021
+    description:
+    - Conducted foundational research on language understanding and generation for
+      scientific domains
+    - Supervised 8 student researchers under PI Noah Smith on projects involving human-AI
+      interaction and dialog systems
+    - Published influential work on LLM evaluation and graph-based reasoning
+- title: Grants and Awards
+  type: time_table
+  contents:
+  - year: '2024'
+    items:
+    - Apple AI Research Grant — "User Representations and Reasoning for Natural Dialogue
+      Systems", in collaboration with USC Professor Swabha Swayamdipta
+  - year: '2020'
+    items:
+    - Postdoc Research Award — "Promoting Crowd-participation in Dialog System Research",
+      University of Washington Computer Science
+  - year: '2018'
+    items:
+    - Excellence in Linguistic Research Fellowship — University of Washington Linguistics
+  - year: 2010, 2011
+    items:
+    - STEM Scholarship — National Science Foundation
+- title: Professional Service
+  type: list
+  contents:
+  - 'Area Chair: ACL Rolling Review (ARR)'
+  - 'Reviewing: *ACL, ICLR, NeurIPS, WWW, AAAI; WideningNLP and other workshops focused
+    on improving access to research; Apple Scholars fellowship program (industrial-academic)'
+  - OECD AI and the Future of Skills (2023)
+  - 'SemEval 2019 Task 10: Math Question Answering (organizer)'
+- title: Teaching
+  type: list
+  contents:
+  - 'Instructor, UW: Ling 200: Introduction to Linguistic Thought'
+  - 'Teaching Assistant, UW: CSE 373: Data Structures and Algorithms'
+  - 'Teaching Assistant, UW: Ling 200: Introduction to Linguistic Thought'
+  - 'Teaching Assistant, Evergreen State College: Graphic Programming with Processing'
+  - 'Guest lecture: "Language Models" in CSE 573: Artificial Intelligence'
+  - 'Guest lecture: "Machine Translation" in UW Translation Hub Lecture Series'
+  - 'Guest lecture: "Deep Learning in Computational Linguistics" in Ling 472: Introduction
+    to Computational Linguistics'
+  - 'Guest lecture: "Text Generation" in CSE 473: Introduction to Artificial Intelligence'

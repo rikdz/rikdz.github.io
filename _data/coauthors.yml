@@ -1,0 +1,32 @@
+# Coauthor profiles — links author names to homepages in publication lists
+"hajishirzi":
+  - firstname: ["Hannaneh", "H.", "Hanna"]
+    url: https://homes.cs.washington.edu/~hannaneh/
+
+"smith":
+  - firstname: ["Noah A.", "Noah", "N. A."]
+    url: https://nasmith.github.io/
+
+"choi":
+  - firstname: ["Yejin", "Y."]
+    url: https://homes.cs.washington.edu/~yejin/
+
+"moschitti":
+  - firstname: ["Alessandro", "A."]
+    url: https://scholar.google.com/citations?user=zsVUCRoAAAAJ
+
+"swayamditta":
+  - firstname: ["Swabha", "S."]
+    url: https://swabhs.com/
+
+"paek":
+  - firstname: ["Tim", "T."]
+    url: https://timpaek.com/
+
+"joshi":
+  - firstname: ["Brihi", "B."]
+    url: https://brihijoshi.github.io/
+
+"levow":
+  - firstname: ["Gina-Anne", "G.", "G.-A."]
+    url: https://faculty.washington.edu/levow/

@@ -1,0 +1,131 @@
+{
+  "basics": {
+    "name": "Rik Koncel-Kedziorski",
+    "label": "ML Scientist, Apple",
+    "email": "rikkoncelkedziorski@gmail.com",
+    "url": "https://rikdz.github.io",
+    "summary": "My research focuses on new methods for reasoning from data, human-computer collaboration, and improving evaluation of AI systems. Previously, I worked on those same things plus question answering, language grounding, and pragmatic meaning representation.",
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "rikdz",
+        "url": "https://github.com/rikdz"
+      },
+      {
+        "network": "Google Scholar",
+        "username": "Scholar",
+        "url": "https://scholar.google.com/citations?user=7oJZmG0AAAAJ"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Apple",
+      "position": "ML Scientist",
+      "startDate": "2024",
+      "endDate": "",
+      "highlights": [
+        "Developed reinforcement learning algorithms for learning user preferences through multi-turn interactions and behavioral simulation",
+        "Invented novel methods for personalizing generative AI systems",
+        "Drove cross-functional teams to integrate reasoning into multimodal LLM systems",
+        "Led research on synthetic data generation for training user-adaptive models"
+      ]
+    },
+    {
+      "name": "S&P Global, Kensho",
+      "position": "Research Scientist",
+      "startDate": "2022",
+      "endDate": "2024",
+      "highlights": [
+        "Secured $100M+ investment for LLM development through technical leadership and strategic vision",
+        "Developed user-centered data and algorithms for financial NLP",
+        "Integral to defining company's Generative AI strategy with focus on financial reasoning"
+      ]
+    },
+    {
+      "name": "Amazon",
+      "position": "Applied Scientist",
+      "startDate": "2021",
+      "endDate": "2022",
+      "highlights": [
+        "Created scalable generative QA systems for Alexa",
+        "Developed novel approaches for RAG and multilingual QA"
+      ]
+    },
+    {
+      "name": "University of Washington CSE",
+      "position": "Postdoctoral Researcher",
+      "startDate": "2019",
+      "endDate": "2021",
+      "highlights": [
+        "Conducted foundational research on language understanding and generation for scientific domains",
+        "Supervised 8 student researchers under PI Noah Smith on projects involving human-AI interaction and dialog systems",
+        "Published influential work on LLM evaluation and graph-based reasoning"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Washington",
+      "studyType": "PhD, Computational Linguistics",
+      "endDate": "2019",
+      "description": "Dissertation: Understanding and Generating Multi-sentence Texts. Advisors: Hanna Hajishirzi & Gina-Anne Levow."
+    },
+    {
+      "institution": "The Evergreen State College",
+      "studyType": "B.S./B.A.",
+      "endDate": "2012",
+      "description": ""
+    },
+    {
+      "institution": "Miami-Dade College",
+      "studyType": "A.A.",
+      "endDate": "2009",
+      "description": ""
+    }
+  ],
+  "awards": [
+    {
+      "title": "Apple AI Research Grant",
+      "date": "2024",
+      "awarder": "\"User Representations and Reasoning for Natural Dialogue Systems\", in collaboration with USC Professor Swabha Swayamdipta"
+    },
+    {
+      "title": "Postdoc Research Award",
+      "date": "2020",
+      "awarder": "\"Promoting Crowd-participation in Dialog System Research\", University of Washington Computer Science"
+    },
+    {
+      "title": "Excellence in Linguistic Research Fellowship",
+      "date": "2018",
+      "awarder": "University of Washington Linguistics"
+    },
+    {
+      "title": "STEM Scholarship",
+      "date": "2010, 2011",
+      "awarder": "National Science Foundation"
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "*ACL, ICLR, NeurIPS, WWW, AAAI",
+      "position": "Reviewer"
+    },
+    {
+      "organization": "WideningNLP and other workshops focused on improving access to research",
+      "position": "Reviewer"
+    },
+    {
+      "organization": "Apple Scholars fellowship program (industrial-academic)",
+      "position": "Reviewer"
+    },
+    {
+      "organization": "OECD AI and the Future of Skills (2023)",
+      "position": "Contributor"
+    },
+    {
+      "organization": "SemEval 2019 Task 10: Math Question Answering (organizer)",
+      "position": "Contributor"
+    }
+  ]
+}

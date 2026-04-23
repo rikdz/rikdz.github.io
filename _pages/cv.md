@@ -1,12 +1,10 @@
 ---
-layout: archive
-title: "Resume"
+layout: cv
 permalink: /cv/
-author_profile: true
-redirect_from:
-  - /resume
+title: cv
+nav: true
+nav_order: 5
+cv_pdf: /assets/pdf/rikkoncel-kedziorski-cv.pdf
+toc:
+  sidebar: left
 ---
-
-{% include base_path %}
-
-Please see my full [Resume](https://rikdz.github.io/files/cv.pdf) for more details.
