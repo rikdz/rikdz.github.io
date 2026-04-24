@@ -42,18 +42,14 @@
       "position": "Research Scientist",
       "startDate": "2022",
       "endDate": "2024",
-      "highlights": [
-        "Research on financial NLP and reasoning; datasets and evaluation methods for LLM-based financial question answering."
-      ]
+      "highlights": ["Research on financial NLP and reasoning; datasets and evaluation methods for LLM-based financial question answering."]
     },
     {
       "name": "Amazon",
       "position": "Applied Scientist",
       "startDate": "2021",
       "endDate": "2022",
-      "highlights": [
-        "Generative question answering for Alexa; retrieval-augmented generation and multilingual QA."
-      ]
+      "highlights": ["Generative question answering for Alexa; retrieval-augmented generation and multilingual QA."]
     }
   ],
   "education": [
