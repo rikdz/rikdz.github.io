@@ -1,14 +1,7 @@
 name: Prettier code formatter
 
 on:
-  pull_request:
-    branches:
-      - master
-      - main
-  push:
-    branches:
-      - master
-      - main
+  workflow_dispatch: # manual only — don't block every push on formatting nits
 
 jobs:
   check:

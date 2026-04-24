@@ -1,8 +1,7 @@
 name: Comment on pull request
 
 on:
-  repository_dispatch:
-    types: [prettier-failed-on-pr]
+  workflow_dispatch: # auxiliary to prettier.yml; disabled now that prettier.yml is manual
 
 jobs:
   comment:

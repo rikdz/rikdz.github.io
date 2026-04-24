@@ -2,13 +2,7 @@ name: Update TOCs
 # This workflow automatically updates the Table of Contents (TOC) in markdown files
 
 on:
-  push:
-    branches:
-      - main
-      - master
-    paths:
-      - "*.md"
-  workflow_dispatch:
+  workflow_dispatch: # manual only — not needed for a CV site
 
 permissions:
   contents: write
