@@ -22,18 +22,16 @@ latest_posts:
   enabled: false
 ---
 
-My research builds AI systems that reason transparently about the people they
-interact with. I work on methods for **interpersonal reasoning** — training
-language models to make sense of the psychological states, beliefs, and
-preferences underlying observed user behavior — with the broader goal of
-turning AI from monolithic knowledge sources into collaborators capable of
-on-the-fly personalization.
+My research builds AI systems that reason about the people they
+interact with. I work on methods for **interpersonal reasoning**, including training
+language models to understand the psychological states, beliefs, and
+preferences underlying observed user behavior with the broader goal of improving human-AI collaboration.
 
 This builds on a decade of work on reasoning in AI. Early in my career I
 focused on formal reasoning, developing foundational datasets and methods
 for mathematical problem solving ([MAWPS][mawps], [MathQA][mathqa]) and
 scientific text generation ([Text Generation from Knowledge Graphs with
-Graph Transformers][graphtx]). In industry I extended these ideas to
+Graph Transformers][graphtx], [Explaining Relationships Between Scientific Documents][relation]). In industry I extended these ideas to
 financial reasoning ([DocFinQA][docfinqa], [BizBench][bizbench]) and to
 one of the first production-scale generative QA systems at Alexa. My current
 work brings these threads together by grounding LLM reasoning in validated
@@ -56,3 +54,4 @@ Amazon.
 [bizbench]: /publications/#koncel2024bizbench
 [primex]: /publications/#koncel2025primex
 [scaffolds]: /publications/#koncel2025improving
+[relation]: /publications/#koncel2021explaining
