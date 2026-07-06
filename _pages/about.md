@@ -36,8 +36,7 @@ financial reasoning ([DocFinQA][docfinqa], [BizBench][bizbench]) and to
 one of the first production-scale generative QA systems at Alexa. My current
 work brings these threads together by grounding LLM reasoning in validated
 psychological theory — see [PrimeX][primex] and [Improving Language Model
-Personas via Rationalization with Psychological Scaffolds][scaffolds] (both
-EMNLP 2025).
+Personas via Rationalization with Psychological Scaffolds][scaffolds].
 
 I completed my PhD in Computational Linguistics at the University of
 Washington in 2019, advised by [Hanna Hajishirzi](https://homes.cs.washington.edu/~hannaneh/)
