@@ -49,6 +49,10 @@
 - title: Grants and Awards
   type: time_table
   contents:
+    - year: "2026"
+      items:
+        - Apple AI Research Grant — "Measuring and Optimizing Conversational Data 
+          Distributions", in collaboration with USC Professor Swabha Swayamdipta
     - year: "2024"
       items:
         - Apple AI Research Grant — "User Representations and Reasoning for Natural Dialogue
@@ -69,7 +73,7 @@
     - "Area Chair: ACL Rolling Review"
     - "Reviewing: *ACL, ICLR, NeurIPS, WWW, AAAI; WideningNLP and other workshops focused
       on improving access to research; Apple Scholars fellowship program (industrial-academic)"
-    - OECD AI and the Future of Skills (2023)
+    - Contributor to OECD AI and the Future of Skills (2023) report
     - "SemEval 2019 Task 10: Math Question Answering (organizer)"
 - title: Teaching
   type: list

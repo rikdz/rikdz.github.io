@@ -75,6 +75,11 @@
   "awards": [
     {
       "title": "Apple AI Research Grant",
+      "date": "2026",
+      "awarder": "\"Measuring and Optimizing Conversational Data Distributions\", in collaboration with USC Professor Swabha Swayamdipta"
+    },
+    {
+      "title": "Apple AI Research Grant",
       "date": "2024",
       "awarder": "\"User Representations and Reasoning for Natural Dialogue Systems\", in collaboration with USC Professor Swabha Swayamdipta"
     },
